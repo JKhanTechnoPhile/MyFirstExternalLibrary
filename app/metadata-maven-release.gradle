@@ -1,0 +1,50 @@
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                // The coordinates of the library, being set from variables that
+                // we'll setup later
+                groupId PUBLISH_GROUP_ID
+                artifactId PUBLISH_ARTIFACT_ID
+                version PUBLISH_VERSION
+
+                // Two artifacts, the `aar` (or `jar`) and the sources
+                if (project.plugins.findPlugin("com.android.library")) {
+                    from components.release
+                } else {
+                    from components.java
+                }
+
+                artifact androidSourcesJar
+//                artifacts javaDocJar
+
+                // Mostly self-explanatory metadata
+                pom {
+                    name = PUBLISH_ARTIFACT_ID
+                    description = "The calculator Android library"
+                    url = 'https://github.com/JKhanTechnoPhile/MyFirstExternalLibrary/tree/main/'
+                    licenses {
+                        license {
+                            name = 'MIT license'
+                            url = 'https://opensource.org/licenses/MIT'
+                        }
+                    }
+                    developers {
+                        developer {
+                            id = 'email_without_extension'
+                            name = 'username'
+                            email = 'email'
+                        }
+                    }
+
+                    // Version control info
+                    scm {
+                        connection = 'scm:https://github.com/JKhanTechnoPhile/MyFirstExternalLibrary.git'
+                        developerConnection = 'scm:https://github.com/JKhanTechnoPhile/MyFirstExternalLibrary.git'
+                        url = 'https://github.com/JKhanTechnoPhile/MyFirstExternalLibrary/tree/main/'
+                    }
+                }
+            }
+        }
+    }
+}
