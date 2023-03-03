@@ -62,7 +62,7 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
 
-                groupId 'com.jkhan.myfirstexternallibrary'
+                groupId 'io.jkhan.myfirstexternallibrary'
                 artifactId = 'MyFirstExternalLibrary'
                 version '1.0.1'
             }
