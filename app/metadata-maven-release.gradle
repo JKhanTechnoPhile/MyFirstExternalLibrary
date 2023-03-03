@@ -21,7 +21,7 @@ afterEvaluate {
                 // Mostly self-explanatory metadata
                 pom {
                     name = PUBLISH_ARTIFACT_ID
-                    description = "The calculator Android library"
+                    description = "Android library Publishing to Maven Central"
                     url = 'https://github.com/JKhanTechnoPhile/MyFirstExternalLibrary/tree/main/'
                     licenses {
                         license {

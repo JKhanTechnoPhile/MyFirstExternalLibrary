@@ -56,19 +56,19 @@ dependencies {
 //    }
 //}
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-
-                groupId 'io.github.jkhantechnophile'
-                artifactId = 'MyFirstExternalLibrary'
-                version '1.0.1'
-            }
-        }
-    }
-}
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            release(MavenPublication) {
+//                from components.release
+//
+//                groupId 'io.github.jkhantechnophile'
+//                artifactId = 'MyFirstExternalLibrary'
+//                version '1.0.1'
+//            }
+//        }
+//    }
+//}
 
 ext {
     PUBLISH_GROUP_ID = 'io.github.jkhantechnophile'
